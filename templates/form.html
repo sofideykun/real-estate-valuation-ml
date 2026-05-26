@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз стоимости недвижимости</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf5f7; /* Очень нежный розовый фон страницы */
+            color: #4a3b3e; /* Темно-коричневый/бордовый оттенок для мягкого контраста текста */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .form-container {
+            background-color: #ffffff;
+            max-width: 400px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(220, 180, 190, 0.3); /* Мягкая розоватая тень */
+            box-sizing: border-box;
+        }
+
+        h2 { 
+            text-align: center; 
+            margin-top: 0;
+            color: #d16b8a; /* Насыщенный розовый для заголовка */
+            font-weight: 600;
+        }
+
+        label { 
+            display: block; 
+            margin-top: 15px; 
+            font-weight: 500; 
+            font-size: 14px; 
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #e8cdd4; /* Светло-розовая рамка */
+            border-radius: 6px;
+            box-sizing: border-box;
+            background-color: #fff9fa;
+            font-family: inherit;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #d16b8a; /* Яркая рамка при клике */
+            box-shadow: 0 0 0 3px rgba(209, 107, 138, 0.15);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        .row { 
+            display: flex; 
+            gap: 12px; 
+        }
+
+        .row label { 
+            flex: 1; 
+            margin-top: 15px;
+        }
+
+        .hint { 
+            font-size: 12px; 
+            color: #a3828a; 
+            margin-top: 5px; 
+            display: block; 
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #e07a98; /* Приятный розовый цвет кнопки */
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            margin-top: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #c96280; /* Чуть более темный розовый при наведении */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Прогноз стоимости</h2>
+        <form method="post" action="/predict">
+            <div class="row">
+                <label>Этаж <input type="text" name="floor" required></label>
+                <label>Год <input type="text" name="year" required></label>
+            </div>
+
+            <div class="row">
+                <label>Площадь (м²) <input type="text" name="total_area" required></label>
+                <label>Жилая (м²) <input type="text" name="living_area" required></label>
+            </div>
+
+            <div class="row">
+                <label>Кухня (м²) <input type="text" name="kitchen_area" required></label>
+                <label>Метро (мин) <input type="text" name="metro_minutes" required></label>
+            </div>
+
+            <label>Статус дома
+                <select name="flat_status">
+                    <option value="1">Сдан</option>
+                    <option value="0">Строится</option>
+                </select>
+            </label>
+
+            <label>Описание
+                <textarea name="description" required></textarea>
+                <span class="hint">Опишите квартиру</span>
+            </label>
+
+            <button type="submit">Рассчитать</button>
+        </form>
+    </div>
+</body>
+</html>

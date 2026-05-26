@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат прогноза</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf5f7; /* Тот же светло-розовый фон */
+            color: #4a3b3e; /* Темный серо-розовый цвет текста */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .result-container {
+            background-color: #ffffff;
+            max-width: 400px;
+            width: 100%;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(220, 180, 190, 0.3); /* Общая стилистика тени */
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h2 { 
+            margin-top: 0;
+            color: #d16b8a; /* Насыщенный розовый вместо старого зеленого */
+            font-weight: 600;
+            font-size: 24px;
+        }
+
+        .label {
+            font-size: 15px;
+            color: #a3828a;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 36px;
+            font-weight: 700;
+            color: #c96280; /* Темно-розовый акцент */
+            margin: 0 0 30px 0;
+            padding: 15px 10px;
+            background-color: #fff9fa;
+            border: 2px dashed #e8cdd4; /* Легкая пунктирная рамка для выделения суммы */
+            border-radius: 8px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #d16b8a;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            border: 2px solid #e8cdd4;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            border-color: #d16b8a; /* Рамка темнеет при наведении */
+            background-color: #fff9fa;
+            color: #c96280;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Прогноз цены недвижимости:</h2>
+        <div class="price">{{ price }} ₽</div>
+        <a href="/">← Назад</a>
+    </div>
+</body>
+</html>
