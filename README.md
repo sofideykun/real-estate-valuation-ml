@@ -8,7 +8,6 @@
 - Сохранение истории запросов и предсказаний в базу данных.
 
 ## Ссылки
-- **Датасет:** Для обучения модели использовался датасет [saint_petersburg_housing_data](https://github.com/Ant1Van/saint_petersburg_housing_data.git).
 - **Демонстрация:** Опробовать сервис можно по ссылке [real-estate.ant1van.site](https://real-estate.ant1van.site).
 
 ## Структура проекта
